@@ -14,6 +14,20 @@ body {
     display: flex;
     justify-content: center;
 }
+    .love-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.love-btn:hover {
+    background-color: #e63956;
+}
 
 .info-container {
     max-width: 600px;
@@ -44,20 +58,7 @@ body {
     font-weight: bold;
 }
 
-.love-btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background-color: #ff4d6d;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.love-btn:hover {
-    background-color: #e63956;
-}
 </style>
 </head>
 
@@ -68,6 +69,9 @@ body {
     <img id="profile-picture" src="1.jpg" alt="Profile Picture">
 
     <h2>❤️ 📋 Personal Information</h2>
+    <button class="love-btn" onclick="window.location.href='love.html'">
+        ❤️ Open Love Page
+    </button>
 
     <div class="info">
         <span>👤 Name:</span> Farah Khaled
@@ -92,10 +96,6 @@ body {
     <div class="info">
         <span>🩺 Last Medical History:</span> non
     </div>
-
-    <button class="love-btn" onclick="window.location.href='love.html'">
-        ❤️ Open Love Page
-    </button>
 
 </div>
 
