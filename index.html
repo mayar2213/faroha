@@ -56,6 +56,22 @@
             margin-bottom: 20px;
             cursor: pointer; /* Make cursor a pointer to indicate clickability */
         }
+        .love-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.love-btn:hover {
+    background-color: #e63956;
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -80,6 +96,9 @@
         <div class="info">
             <span>🩺 Last Medical History:</span> non
         </div>
+        <button onclick="window.location.href='love.html'" class="love-btn">
+    ❤️ Open Love Page
+</button>
     </div>
     <audio id="profile-audio" src="06.mp3"></audio>
     <script>
