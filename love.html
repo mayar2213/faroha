@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mayar ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#000,#2b0000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+svg{
+    width:320px;
+    height:320px;
+}
+
+#heartOutline{
+    fill:none;
+    stroke:#ff6b81;
+    stroke-width:8;
+    stroke-dasharray:1500;
+    stroke-dashoffset:1500;
+    animation:drawHeart 3s ease forwards;
+}
+
+#heartFill{
+    fill:#ff003c;
+    opacity:0;
+    transform-origin:center;
+    animation:
+    fillHeart 1s forwards 3s,
+    heartbeat 1s infinite 4s;
+}
+
+.message{
+    color:white;
+    font-size:2rem;
+    margin-top:20px;
+    opacity:0;
+    animation:showText 2s forwards 4s;
+    text-shadow:0 0 15px #ff4d6d;
+}
+
+.small{
+    display:block;
+    font-size:1rem;
+    margin-top:10px;
+    color:#ffd1dc;
+}
+
+@keyframes drawHeart{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+@keyframes fillHeart{
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    25%{
+        transform:scale(1.1);
+    }
+    50%{
+        transform:scale(1);
+    }
+    75%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes showText{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Hearts Floating */
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 6s linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<svg viewBox="0 0 512 512">
+
+<path id="heartFill"
+d="M256 472s-216-135-216-280c0-80 64-144 144-144
+48 0 88 24 112 61 24-37 64-61 112-61
+80 0 144 64 144 144 0 145-216 280-216 280z"/>
+
+<path id="heartOutline"
+d="M256 472s-216-135-216-280c0-80 64-144 144-144
+48 0 88 24 112 61 24-37 64-61 112-61
+80 0 144 64 144 144 0 145-216 280-216 280z"/>
+
+</svg>
+
+<div class="message">
+❤️ I Love You faroha ❤️
+<span class="small">
+You make every day brighter ✨
+</span>
+</div>
+
+</div>
+
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
