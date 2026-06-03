@@ -1,116 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information Page</title>
-    <style>
-        body {
-            font-variant: small-caps;
-            font-style: italic;
-            font-weight: bold;
-            line-height: 1.5;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.6;
-            text-transform: none;
-            color: #333;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #cce7ff;
-        }
-        .info-container {
-            max-width: 600px;
-            padding: 20px;
-            border: 2px solid #99c2ff;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            background-color: #e6f2ff;
-            text-align: center;
-            color: #003366;
-        }
-        .info-container h2 {
-            margin-bottom: 25px;
-            color: #002147;
-        }
-        .info-container .info {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #002147;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
-        .info-container .info span {
-            font-weight: bold;
-            color: #004080;
-        }
-        .info-container img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            cursor: pointer; /* Make cursor a pointer to indicate clickability */
-        }
-        .love-btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background-color: #ff4d6d;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For faroha ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.love-btn:hover {
-    background-color: #e63956;
-    transform: scale(1.05);
+body{
+    background:linear-gradient(135deg,#000,#2b0000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
 }
-    </style>
+
+.container{
+    text-align:center;
+}
+
+svg{
+    width:320px;
+    height:320px;
+}
+
+#heartOutline{
+    fill:none;
+    stroke:#ff6b81;
+    stroke-width:8;
+    stroke-dasharray:1500;
+    stroke-dashoffset:1500;
+    animation:drawHeart 3s ease forwards;
+}
+
+#heartFill{
+    fill:#ff003c;
+    opacity:0;
+    transform-origin:center;
+    animation:
+    fillHeart 1s forwards 3s,
+    heartbeat 1s infinite 4s;
+}
+
+.message{
+    color:white;
+    font-size:2rem;
+    margin-top:20px;
+    opacity:0;
+    animation:showText 2s forwards 4s;
+    text-shadow:0 0 15px #ff4d6d;
+}
+
+.small{
+    display:block;
+    font-size:1rem;
+    margin-top:10px;
+    color:#ffd1dc;
+}
+
+@keyframes drawHeart{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+@keyframes fillHeart{
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    25%{
+        transform:scale(1.1);
+    }
+    50%{
+        transform:scale(1);
+    }
+    75%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes showText{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Hearts Floating */
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 6s linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
 </head>
-<body>
-    <div class="info-container">
-        <img id="profile-picture" src="1.jpg" alt="Profile Picture">
-        ❤️<h2>📋 Personal Information</h2>
-        <div class="info">
-            <span>👤 Name:</span> Farah Khaled
-        </div>
-        <div class="info">
-            <span>🎂 Age:</span> 22
-        </div>
-        <div class="info">
-            <span>📅 Date of Birth:</span> 3/2/2002
-        </div>
-        <div class="info">
-            <span>📞 Parent's Number:</span> +20 109 123 6105
-        </div>
-        <div class="info">
-            <span>📞 Another Number:</span> +1-234-567-890
-        </div>
-        <div class="info">
-            <span>🩺 Last Medical History:</span> non
-        </div>
-        <button onclick="window.location.href='love.html'" class="love-btn">
-    ❤️ Open Love Page
-</button>
-    </div>
-    <audio id="profile-audio" src="06.mp3"></audio>
-    <script>
-        // Get the image and audio elements
-        const profilePicture = document.getElementById('profile-picture');
-        const profileAudio = document.getElementById('profile-audio');
 
-        // Add click event listener to the image
-        profilePicture.addEventListener('click', () => {
-            profileAudio.currentTime = 120; // Set audio to start at 1:55 (115 seconds)
-            profileAudio.play();
-        });
-    </script>
+<body>
+
+<div class="container">
+
+<svg viewBox="0 0 512 512">
+
+<path id="heartFill"
+d="M256 472s-216-135-216-280c0-80 64-144 144-144
+48 0 88 24 112 61 24-37 64-61 112-61
+80 0 144 64 144 144 0 145-216 280-216 280z"/>
+
+<path id="heartOutline"
+d="M256 472s-216-135-216-280c0-80 64-144 144-144
+48 0 88 24 112 61 24-37 64-61 112-61
+80 0 144 64 144 144 0 145-216 280-216 280z"/>
+
+</svg>
+
+<div class="message">
+❤️ I Love You faroha ❤️
+<span class="small">
+You make every day brighter ✨
+</span>
+</div>
+
+</div>
+
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
 </body>
 </html>
